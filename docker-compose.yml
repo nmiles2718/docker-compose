@@ -1,0 +1,10 @@
+version: '3.1'
+
+services:
+  example-service:
+    build:
+      context: ./example_service
+      dockerfile: ./Dockerfile
+    restart: unless-stopped
+    tty: true
+    command: ["python","/example_service/example.py","-msg", "hello!"]
